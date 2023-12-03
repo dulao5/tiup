@@ -37,6 +37,7 @@ type Config struct {
 	// Takes one of no, on-success, on-failure, on-abnormal, on-watchdog, on-abort, or always.
 	// The Template set as always if this is not setted.
 	Restart string
+	TimeoutStopSec      uint
 }
 
 // NewConfig returns a Config with given arguments
@@ -75,6 +76,12 @@ func (c *Config) WithIOWriteBandwidthMax(io string) *Config {
 // WithLimitCORE set the LimitCORE field of Config
 func (c *Config) WithLimitCORE(core string) *Config {
 	c.LimitCORE = core
+	return c
+}
+
+// WithTimeoutStopSec set the TimeoutStopSec field of uint
+func (c *Config) WithTimeoutStopSec(timeoutStopSec string) *Config {
+	c.TimeoutStopSec = timeoutStopSec
 	return c
 }
 
