@@ -100,6 +100,7 @@ global:
   ssh_port: 220
   deploy_dir: "test-deploy"
   data_dir: "test-data"
+  timeout_stop_sec: 154
 tidb_servers:
   - host: 172.16.5.138
     deploy_dir: "tidb-deploy"
@@ -118,6 +119,7 @@ kvcdc_servers:
 	c.Assert(topo.GlobalOptions.SSHPort, Equals, 220)
 	c.Assert(topo.TiDBServers[0].SSHPort, Equals, 220)
 	c.Assert(topo.TiDBServers[0].DeployDir, Equals, "tidb-deploy")
+	c.Assert(topo.TiDBServers[0].TimeoutStopSec, Equals, 154)
 
 	c.Assert(topo.PDServers[0].SSHPort, Equals, 220)
 	c.Assert(topo.PDServers[0].DeployDir, Equals, "test-deploy/pd-2379")
