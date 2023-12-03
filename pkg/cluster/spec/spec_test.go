@@ -117,9 +117,9 @@ kvcdc_servers:
 	c.Assert(err, IsNil)
 	c.Assert(topo.GlobalOptions.User, Equals, "test1")
 	c.Assert(topo.GlobalOptions.SSHPort, Equals, 220)
+	c.Assert(topo.GlobalOptions.TimeoutStopSec, Equals, 154)
 	c.Assert(topo.TiDBServers[0].SSHPort, Equals, 220)
 	c.Assert(topo.TiDBServers[0].DeployDir, Equals, "tidb-deploy")
-	c.Assert(topo.TiDBServers[0].TimeoutStopSec, Equals, 154)
 
 	c.Assert(topo.PDServers[0].SSHPort, Equals, 220)
 	c.Assert(topo.PDServers[0].DeployDir, Equals, "test-deploy/pd-2379")
