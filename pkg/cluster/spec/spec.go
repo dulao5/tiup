@@ -89,7 +89,7 @@ type (
 		ResourceControl meta.ResourceControl `yaml:"resource_control,omitempty" validate:"resource_control:editable"`
 		OS              string               `yaml:"os,omitempty" default:"linux"`
 		Arch            string               `yaml:"arch,omitempty"`
-		TimeoutStopSec  int                  `yaml:"timeout_stop_sec,omitempty" default:"0" validate:"timeout_stop_sec:editable"`
+		TimeoutStopSec  uint                 `yaml:"timeout_stop_sec,omitempty" default:"0" validate:"timeout_stop_sec:editable"`
 		Custom          any                  `yaml:"custom,omitempty" validate:"custom:ignore"`
 	}
 
