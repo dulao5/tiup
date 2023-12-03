@@ -79,12 +79,6 @@ func (c *Config) WithLimitCORE(core string) *Config {
 	return c
 }
 
-// WithTimeoutStopSec set the TimeoutStopSec field of uint
-func (c *Config) WithTimeoutStopSec(timeoutStopSec string) *Config {
-	c.TimeoutStopSec = timeoutStopSec
-	return c
-}
-
 // ConfigToFile write config content to specific path
 func (c *Config) ConfigToFile(file string) error {
 	config, err := c.Config()
