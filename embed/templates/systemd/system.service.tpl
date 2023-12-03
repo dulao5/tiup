@@ -40,5 +40,9 @@ RestartSec=15s
 SendSIGKILL=no
 {{- end}}
 
+{{- if .TimeoutStopSec}}
+TimeoutStopSec={{.TimeoutStopSec}}
+{{end}}
+
 [Install]
 WantedBy=multi-user.target
