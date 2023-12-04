@@ -198,6 +198,10 @@ func (i *BaseInstance) InitConfig(ctx context.Context, e ctxt.Executor, opt Glob
 		systemCfg.Restart = "on-failure"
 	}
 
+	if opt.TimeoutStopSec {
+		systemCfg.TimeoutStopSec = opt.TimeoutStopSec
+	}
+
 	if err := systemCfg.ConfigToFile(sysCfg); err != nil {
 		return errors.Trace(err)
 	}
